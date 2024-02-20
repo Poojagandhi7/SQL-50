@@ -6,8 +6,13 @@ public:
         int mini = prices[0];
         for(int i = 1; i < n; i++) {
             int profit =  prices[i] - mini;
-            maxprofit=max(profit,maxprofit);
-            mini = min(prices[i],mini);
+            if(profit>maxprofit){
+                maxprofit=profit;
+            }
+            if(prices[i]<mini){
+                mini=prices[i];
+            }
+            
         }
         return maxprofit;
     }
