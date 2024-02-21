@@ -30,7 +30,6 @@ public:
             idx2=-1;
         }
         return {idx2,idx1};
-        
-        
+           
     }
 };
