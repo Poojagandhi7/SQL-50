@@ -11,11 +11,14 @@ public:
         }
         nums=ans;
         return ans.size();
-//         int count=0;
         
-//         for(int i=0;i<=ans.size()-1;i++){
-//             count++;
-//         }
-//         return count;
+        // int index = 1;
+        // for(int i = 1; i < nums.size(); i++){
+        //     if(nums[i] != nums[i - 1]){
+        //         nums[index] = nums[i];
+        //         index++;
+        //     }
+        // }
+        // return index;
     }
 };
