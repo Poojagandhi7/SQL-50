@@ -6,32 +6,97 @@ public:
         int i=0,j=0;
         
         while(i<m && j<n){
-            if(nums1[i]<=nums2[j]){
+            if(nums1[i]<nums2[j]){
                 ans.push_back(nums1[i]);
                 i++;
-                // j++;
             }
             else{
                 ans.push_back(nums2[j]);
-                // i++;
                 j++;
             }
         }
+        
         while(i<m){
             ans.push_back(nums1[i]);
             i++;
         }
+        
         while(j<n){
             ans.push_back(nums2[j]);
             j++;
         }
         
-        
-        for(int k=0;k< m + n;k++){
-            nums1[k] = ans[k];
+        for(int k=0;k<m+n;k++){
+            nums1[k]=ans[k];
         }
         for(int i=0;i<ans.size();i++){
             cout << ans[i] << " ";
         }
+        
+        
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// vector<int> ans;
+//         int i=0,j=0;
+        
+//         while(i<m && j<n){
+//             if(nums1[i]<=nums2[j]){
+//                 ans.push_back(nums1[i]);
+//                 i++;
+//                 // j++;
+//             }
+//             else{
+//                 ans.push_back(nums2[j]);
+//                 // i++;
+//                 j++;
+//             }
+//         }
+//         while(i<m){
+//             ans.push_back(nums1[i]);
+//             i++;
+//         }
+//         while(j<n){
+//             ans.push_back(nums2[j]);
+//             j++;
+//         }
+        
+        
+//         for(int k=0;k< m + n;k++){
+//             nums1[k] = ans[k];
+//         }
+//         for(int i=0;i<ans.size();i++){
+//             cout << ans[i] << " ";
+//         }
