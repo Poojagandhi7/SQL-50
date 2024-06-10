@@ -12,13 +12,23 @@ public:
 //         nums=ans;
 //         return ans.size();
         
-        int index = 1;
-        for(int i = 1; i < nums.size(); i++){
-            if(nums[i] != nums[i - 1]){
-                nums[index] = nums[i];
-                index++;
+        // int index = 1;
+        // for(int i = 1; i < nums.size(); i++){
+        //     if(nums[i] != nums[i - 1]){
+        //         nums[index] = nums[i];
+        //         index++;
+        //     }
+        // }
+        // return index;
+        
+        vector<int> b;
+        b.push_back(nums[0]);
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]!=nums[i-1]){
+                b.push_back(nums[i]);
             }
         }
-        return index;
+        nums=b;
+        return nums.size();
     }
 };
