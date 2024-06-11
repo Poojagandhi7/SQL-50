@@ -10,7 +10,7 @@ public:
         int low = 0;
         int high = n-1;
         
-        for(int i=0;i<n;i++){
+        while(low<=high){
             int mid = (low + high)/2;
             
             if(target==nums[mid]){
