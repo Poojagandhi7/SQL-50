@@ -11,38 +11,92 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        int size = 0;
-        ListNode* current = head;
-        while (current != nullptr) {
+        
+        ListNode* temp = head;
+        ListNode* prev = nullptr;
+        int size=0;
+        int cnt=1;
+        
+        
+        while (temp != nullptr) {
             size++;
-            current = current->next;
+            temp = temp->next;
         }
-
-        current = head;
-        if(head== nullptr || head->next== nullptr || n<=0 || n>size ){
+        
+        if(head== nullptr || head->next==nullptr || n<=0 || n>size ){
             return nullptr;
         }
-        // if(head==size){
-        //     return nullptr;
-        // }
-
+        
         if(n==size){
-            ListNode* temp = head;
+            ListNode* current = head;
             head = head->next;
-            delete temp ;
+            delete current ;
             return head;
         }
+        
+        temp=head;
+        
+        while(temp!=nullptr){
+            if(n==size-cnt+1){
+                prev->next=temp->next;
+                delete temp;
+                break;
+            }
+            cnt++;
+            prev=temp;
+            temp=temp->next;
+        }
+        
+        return  head;
+    }
+};  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int size = 0;
+//         ListNode* current = head;
+//         while (current != nullptr) {
+//             size++;
+//             current = current->next;
+//         }
+
+//         current = head;
+//         if(head== nullptr || head->next== nullptr || n<=0 || n>size ){
+//             return nullptr;
+//         }
+//         // if(head==size){
+//         //     return nullptr;
+//         // }
+
+//         if(n==size){
+//             ListNode* temp = head;
+//             head = head->next;
+//             delete temp ;
+//             return head;
+//         }
 
     
-        int a = size-n+1;
+//         int a = size-n+1;
 
-        ListNode* prev = nullptr;
-        for (int i = 1; i < a; i++) {
-            prev = current;
-            current = current->next;
-        }
-        prev->next = current->next;
-        delete current;
-        return head;
-        }
-};  
+//         ListNode* prev = nullptr;
+//         for (int i = 1; i < a; i++) {
+//             prev = current;
+//             current = current->next;
+//         }
+//         prev->next = current->next;
+//         delete current;
+//         return head;
