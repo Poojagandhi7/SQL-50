@@ -12,25 +12,37 @@ public:
     }
     
     int pop() {
+        // if(!output.empty()){
+        //     output.pop();
+        // }
+        if(output.empty()){
+            while(!input.empty()){
+                output.push(input.top());
+                input.pop();
+            }
+            
+        }
+        int temp = output.top();
+        output.pop();
+        return temp;
+        
+        
+    }
+    
+    
+    int peek() {
+        // if(!output.empty()){
+        //     output.pop();
+        // }
         if(output.empty()){
             while(!input.empty()){
                 output.push(input.top());
                 input.pop();
             }
         }
-        int temp = output.top();
-        output.pop();
-        return temp;
-    }
-    
-    int peek() {
-        if (output.empty()) {
-            while (!input.empty()) {
-                output.push(input.top());
-                input.pop();
-            }
-        }
+        
         return output.top();
+        
     }
     
     
@@ -47,3 +59,33 @@ public:
  * int param_3 = obj->peek();
  * bool param_4 = obj->empty();
  */
+
+
+
+
+
+
+
+
+
+// if(output.empty()){
+//             while(!input.empty()){
+//                 output.push(input.top());
+//                 input.pop();
+//             }
+//         }
+//         int temp = output.top();
+//         output.pop();
+//         return temp;
+
+
+
+
+
+// if (output.empty()) {
+//             while (!input.empty()) {
+//                 output.push(input.top());
+//                 input.pop();
+//             }
+//         }
+//         return output.top();
